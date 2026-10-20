@@ -1,0 +1,12 @@
+{
+  "name": "cf-connect-demo",
+  "main": "index.js",
+  "compatibility_date": "2026-01-01",
+  "assets": { "directory": "./public", "binding": "ASSETS" },
+  "durable_objects": {
+    "bindings": [{ "name": "CHANNEL", "class_name": "Channel" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Channel"] }],
+  // The proxy echoes the caller's private IP: the node a channel runs on.
+  "vars": { "WHOAMI_URL": "http://10.42.0.6/whoami" }
+}
